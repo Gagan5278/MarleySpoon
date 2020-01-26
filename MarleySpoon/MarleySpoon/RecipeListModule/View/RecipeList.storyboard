@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe List View Controller-->
+        <scene sceneID="bS6-Yq-BaV">
+            <objects>
+                <viewController storyboardIdentifier="RecipeListView" id="fvb-lo-beT" customClass="RecipeListViewController" customModule="MarleySpoon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuu-Yr-O77">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R4n-Fk-Cat">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipeListCellIdentifier" rowHeight="170" id="MbG-ey-qS4" customClass="RecipeListTableCell" customModule="MarleySpoon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MbG-ey-qS4" id="l5a-wn-b3g">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.grid.4x3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e1z-BT-Ptm">
+                                                    <rect key="frame" x="10" y="12.5" width="150" height="145"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="e1z-BT-Ptm" secondAttribute="height" multiplier="1:1" id="sqW-Ep-fud"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ2-nm-6ya">
+                                                    <rect key="frame" x="170" y="73.5" width="203" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JmL-9g-OxY">
+                                                    <rect key="frame" x="66.5" y="66.5" width="37" height="37"/>
+                                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kox-Cb-JPi">
+                                                    <rect key="frame" x="170" y="107" width="203" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JmL-9g-OxY" firstAttribute="centerX" secondItem="e1z-BT-Ptm" secondAttribute="centerX" id="1Zh-Nr-Ykw"/>
+                                                <constraint firstItem="PJ2-nm-6ya" firstAttribute="leading" secondItem="e1z-BT-Ptm" secondAttribute="trailing" constant="10" id="D7K-Oa-rXc"/>
+                                                <constraint firstItem="JmL-9g-OxY" firstAttribute="centerY" secondItem="e1z-BT-Ptm" secondAttribute="centerY" id="Gv7-jU-DKY"/>
+                                                <constraint firstItem="e1z-BT-Ptm" firstAttribute="leading" secondItem="l5a-wn-b3g" secondAttribute="leading" constant="10" id="IpQ-38-xtD"/>
+                                                <constraint firstItem="kox-Cb-JPi" firstAttribute="trailing" secondItem="PJ2-nm-6ya" secondAttribute="trailing" id="Kyd-yd-9rH"/>
+                                                <constraint firstItem="PJ2-nm-6ya" firstAttribute="centerY" secondItem="l5a-wn-b3g" secondAttribute="centerY" id="OKx-ad-2af"/>
+                                                <constraint firstItem="kox-Cb-JPi" firstAttribute="leading" secondItem="PJ2-nm-6ya" secondAttribute="leading" id="abA-fN-caW"/>
+                                                <constraint firstItem="kox-Cb-JPi" firstAttribute="top" secondItem="PJ2-nm-6ya" secondAttribute="bottom" constant="10" id="b1y-tA-R3b"/>
+                                                <constraint firstAttribute="trailing" secondItem="PJ2-nm-6ya" secondAttribute="trailing" constant="10" id="hyC-SZ-8Jm"/>
+                                                <constraint firstItem="e1z-BT-Ptm" firstAttribute="top" secondItem="l5a-wn-b3g" secondAttribute="top" constant="10" id="qsj-j9-Vr1"/>
+                                                <constraint firstAttribute="bottom" secondItem="e1z-BT-Ptm" secondAttribute="bottom" constant="10" id="r1w-JF-D60"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoLoaderIndicator" destination="JmL-9g-OxY" id="kVe-bj-ha2"/>
+                                            <outlet property="recipeInfoLabel" destination="kox-Cb-JPi" id="ILx-Fv-6Mc"/>
+                                            <outlet property="recipeLogoImageView" destination="e1z-BT-Ptm" id="Ajm-Vh-Lpr"/>
+                                            <outlet property="recipeTitleLabel" destination="PJ2-nm-6ya" id="EjN-Ik-dDa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fvb-lo-beT" id="ttt-Ky-LUM"/>
+                                    <outlet property="delegate" destination="fvb-lo-beT" id="wAX-uV-Cwr"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="POC-05-L53">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BN3-ev-Qb0" firstAttribute="trailing" secondItem="R4n-Fk-Cat" secondAttribute="trailing" id="JfP-Oi-rvu"/>
+                            <constraint firstItem="R4n-Fk-Cat" firstAttribute="top" secondItem="BN3-ev-Qb0" secondAttribute="top" id="ROO-ha-xmI"/>
+                            <constraint firstItem="BN3-ev-Qb0" firstAttribute="bottom" secondItem="R4n-Fk-Cat" secondAttribute="bottom" id="WEm-EI-WZg"/>
+                            <constraint firstItem="R4n-Fk-Cat" firstAttribute="leading" secondItem="BN3-ev-Qb0" secondAttribute="leading" id="dPA-1R-Wlu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BN3-ev-Qb0"/>
+                    </view>
+                    <connections>
+                        <outlet property="loaderIndicator" destination="POC-05-L53" id="td1-K4-VFL"/>
+                        <outlet property="recipeListTableView" destination="R4n-Fk-Cat" id="d95-AI-Hnh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AfW-Bt-W2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.014492753623188" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.grid.4x3.fill" catalog="system" width="64" height="42"/>
+    </resources>
+</document>

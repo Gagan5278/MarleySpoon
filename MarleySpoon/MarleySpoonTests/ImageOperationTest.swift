@@ -9,15 +9,16 @@
 import XCTest
 @testable import MarleySpoon
 class ImageOperationTest: XCTestCase {
-
     var mockOperationQueue: OperationQueue!
+    
     override func setUp() {
         mockOperationQueue = OperationQueue()
         mockOperationQueue.maxConcurrentOperationCount = 1    }
-
+    
     override func tearDown() {
         mockOperationQueue = nil
     }
+    
     //MARK:- test image download operation
     func testOperation() {
         let expectationObject = expectation(description: "Operation mock request")
@@ -32,5 +33,4 @@ class ImageOperationTest: XCTestCase {
         waitForExpectations(timeout: 5.0, handler: nil)
         XCTAssertNotNil(imageDownloaded)
     }
-
 }

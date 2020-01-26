@@ -11,7 +11,7 @@
 import UIKit
 
 class RecipeDetailPresenter: RecipeDetailPresenterProtocol {
-
+    
     weak private var view: RecipeDetailViewProtocol?
     var interactor: RecipeDetailInteractorProtocol?
     private let router: RecipeDetailWireframeProtocol
@@ -21,7 +21,7 @@ class RecipeDetailPresenter: RecipeDetailPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.model = model
-
+        
     }
     //MARK:- View loaded
     func viewLoaded() {

@@ -11,9 +11,9 @@ enum Constants {
     //size for thumbnail image
     
     enum Contentful_API_Auth_Constants {
-         static let spaceid = "kk2bw5ojx476"
-         static let access_token = "7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c"
-         static let envoirnment = "master"
+        static let spaceid = "kk2bw5ojx476"
+        static let access_token = "7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c"
+        static let envoirnment = "master"
     }
     
     enum Contentful_URL {

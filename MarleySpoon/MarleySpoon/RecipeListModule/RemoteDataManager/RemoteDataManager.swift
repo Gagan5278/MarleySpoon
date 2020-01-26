@@ -14,7 +14,7 @@ class RemoteDataManager: RecipeRemoteDataManagerInputProtocol {
     //MARK:- Fecth list from server
     func retrieveRecipeList() {
         NetworkCommunicator().fetchRecipeList(value: Items.self) {
-          self.handleResult($0)
+            self.handleResult($0)
         }
     }
     
@@ -27,5 +27,5 @@ class RemoteDataManager: RecipeRemoteDataManagerInputProtocol {
             remoteRequestHandler?.onRecieve(error: err)
         }
     }
-
+    
 }

@@ -24,7 +24,7 @@ extension RecipeListInteractor: RecipeRemoteDataManagerOutputProtocol {
     func onRecieveRecipe(item: [RecipeModel]) {
         presenter?.onRecieveRecipe(items: item)
     }
-
+    
     func onRecieve(error: APIError) {
         presenter?.onRecieveServer(error: error)
     }

@@ -80,8 +80,8 @@ class DetailImageView: UIImageView {
                 self.fullscreenImageView.alpha = 1
                 self.fullscreenImageView.layoutSubviews()
                 self.closeLabel.alpha = 1
-                }, completion: { _ in
-                    self.setupLabelAnchor()
+            }, completion: { _ in
+                self.setupLabelAnchor()
             })
         }
     }
@@ -103,7 +103,7 @@ class DetailImageView: UIImageView {
             self.fullscreenImageView?.frame = self.frame
             self.closeLabel?.alpha = 0.0
             self.fullscreenImageView?.alpha = 0.0
-       
+            
         }, completion: { finished in
             self.fullscreenImageView?.removeFromSuperview()
             self.fullscreenImageView = nil

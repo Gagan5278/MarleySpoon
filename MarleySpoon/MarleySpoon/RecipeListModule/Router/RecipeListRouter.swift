@@ -11,9 +11,9 @@
 import UIKit
 
 class RecipeListRouter: RecipeListWireframeProtocol {
-
+    
     weak var viewController: UIViewController?
-
+    
     static func createRecipeListModule() -> UIViewController? {
         if let view = UIStoryboard(name: "RecipeList", bundle: .main).instantiateViewController(identifier: "RecipeListView") as? RecipeListViewController {
             let interactor: RecipeListInteractorInputProtocol & RecipeRemoteDataManagerOutputProtocol = RecipeListInteractor()
@@ -33,16 +33,16 @@ class RecipeListRouter: RecipeListWireframeProtocol {
     //MARK:- Alert message
     func showAlert(with title: String, message: String, view: RecipeListViewProtocol, buttonTitle: String, withCallback callBack: ((UIAlertAction) -> Void)?) {
         if let viewController = view as? UIViewController {
-             CustomAlertController.showUserAlert(with: title, message: message, buttonTitle: buttonTitle, onViewController: viewController, withCallback: callBack)
-         }
+            CustomAlertController.showUserAlert(with: title, message: message, buttonTitle: buttonTitle, onViewController: viewController, withCallback: callBack)
+        }
     }
-
+    
     func pushToViewController(view: RecipeListViewProtocol, model: RecipeModel) {
         //1. Get Detail View Controller
-         let detailViewController = RecipeDetailRouter.createDetailModule(with: model)
+        let detailViewController = RecipeDetailRouter.createDetailModule(with: model)
         //2. Push to detailView Controller
-         if let viewController = view as? UIViewController {
-             viewController.navigationController?.pushViewController(detailViewController, animated: true)
-         }
+        if let viewController = view as? UIViewController {
+            viewController.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }

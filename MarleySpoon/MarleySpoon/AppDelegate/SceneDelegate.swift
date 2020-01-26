@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let navController = self.window?.rootViewController as? UINavigationController,let recipeController = RecipeListRouter.createRecipeListModule() {
             navController.viewControllers = [recipeController]

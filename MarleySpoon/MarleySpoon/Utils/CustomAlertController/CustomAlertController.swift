@@ -17,12 +17,12 @@ class CustomAlertController {
     ///   - onViewController: ViewController where alert need to be present
     ///   - callBack: Optional ann call back action on alert button click
     class func showUserAlert(with title : String, message : String, buttonTitle : String, onViewController : UIViewController, withCallback callBack :((UIAlertAction) -> Void)?)
-     {
+    {
         //1. Create alert controller
-         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         //2. add action to alert controller
-         alertController.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: callBack))
+        alertController.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: callBack))
         //3. present on viewController
-         onViewController.present(alertController, animated: true, completion: nil)
-     }
+        onViewController.present(alertController, animated: true, completion: nil)
+    }
 }

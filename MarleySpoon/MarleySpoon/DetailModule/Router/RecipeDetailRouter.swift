@@ -31,7 +31,7 @@ class RecipeDetailRouter: RecipeDetailWireframeProtocol {
     //MARK:- Alert message
     func showAlert(with title: String, message: String, view: RecipeDetailViewProtocol, buttonTitle: String, withCallback callBack: ((UIAlertAction) -> Void)?) {
         if let viewController = view as? UIViewController {
-             CustomAlertController.showUserAlert(with: title, message: message, buttonTitle: buttonTitle, onViewController: viewController, withCallback: callBack)
-         }
+            CustomAlertController.showUserAlert(with: title, message: message, buttonTitle: buttonTitle, onViewController: viewController, withCallback: callBack)
+        }
     }
 }

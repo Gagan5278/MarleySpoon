@@ -32,8 +32,7 @@ class RecipeModel: Decodable {
     }
 }
 
-
-protocol nameField: Decodable {
+protocol NameFieldProtocol: Decodable {
     var name: String? {set get}
 }
 
@@ -42,12 +41,13 @@ class Photo: Decodable {
     var url: String?
 }
 
-class Chef: Decodable, nameField {
+class Chef: Decodable, NameFieldProtocol {
     var name: String?
     let sys: Sys?
 }
 
-class Tags: Decodable, nameField {
+//Handling tags for recipe
+class Tags: Decodable, NameFieldProtocol {
     var name: String?
     let tags: Sys
     enum CodingKeys: String, CodingKey {
@@ -61,17 +61,20 @@ class Tags: Decodable, nameField {
     }
 }
 
+//Sys Decodable
 class Sys: Decodable {
     let type: String?
     let linkType: String?
     let id: String
 }
 
+//Image file detail handler
 class File: Decodable {
     let fileName: String
     let url: String
 }
 
+//Image assets
 class Asset: Decodable {
     let file: File
     enum AssetCodingKeys: String, CodingKey {

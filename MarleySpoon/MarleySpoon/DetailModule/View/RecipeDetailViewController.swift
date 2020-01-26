@@ -21,6 +21,7 @@ class RecipeDetailViewController: UIViewController {
         return indicator
     }()
     
+    ///Image view for displaying reecipe
     let detailImageView: DetailImageView = {
         let imageView = DetailImageView(frame: .zero)
         imageView.isUserInteractionEnabled = true
@@ -28,11 +29,11 @@ class RecipeDetailViewController: UIViewController {
         return imageView
     }()
     
+    ///UITextView for title and description. Enable touch action If there is any link associated with description or title.
     let detailTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
-        textView.textAlignment = .justified
         textView.isUserInteractionEnabled = true
         textView.dataDetectorTypes = .link
         textView.isSelectable = true
@@ -40,9 +41,10 @@ class RecipeDetailViewController: UIViewController {
     }()
     
     ///RecipeDetailPresenterProtocol
-	var presenter: RecipeDetailPresenterProtocol?
+    var presenter: RecipeDetailPresenterProtocol?
+    
     //MARK:- View Controller life cycle
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         //1.
@@ -71,7 +73,7 @@ class RecipeDetailViewController: UIViewController {
     fileprivate func setupSubViews() {
         //1.
         self.view.addSubview(detailImageView)
-         NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([
             self.detailImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.detailImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.detailImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -94,6 +96,7 @@ class RecipeDetailViewController: UIViewController {
     }
 }
 
+//MARK:- RecipeDetailViewProtocol
 extension RecipeDetailViewController: RecipeDetailViewProtocol {
     
     func didLoadDetail(from text: NSAttributedString) {

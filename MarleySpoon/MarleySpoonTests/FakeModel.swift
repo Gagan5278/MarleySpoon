@@ -135,7 +135,7 @@ class FakeModel {
         """.utf8)
         return fakeRecipeListModel
     }
-
+    
     //MARK:- get Fake  model
     class func getRecipeListFakeModel() -> Items?
     {

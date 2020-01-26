@@ -42,6 +42,11 @@ class Items : Decodable {
         }
     }
     
+    
+    /// Get url for recipe and assign it to RecipeModel photo url
+    /// - Parameters:
+    ///   - container: KeyedDecodingContainer
+    ///   - modelItem: RecipeModel
     private func extractAssetURLIn(_ container: KeyedDecodingContainer<Items>,modelItem: inout RecipeModel) throws  {
         let nestedConatinerIncludes = try container.nestedContainer(keyedBy: Items.Field.self, forKey: .includes)
         var allItems = try nestedConatinerIncludes.nestedUnkeyedContainer(forKey: .Asset)
@@ -57,6 +62,10 @@ class Items : Decodable {
         }
     }
     
+    /// Find chef name and names assiciated with tag for recipe
+    /// - Parameters:
+    ///   - container: KeyedDecodingContainer
+    ///   - modelItem: RecipeModel
     private func extractTagsIn(_ container: KeyedDecodingContainer<Items>, modelItem: inout RecipeModel) throws  {
         let nestedConatinerIncludes = try container.nestedContainer(keyedBy: Items.Field.self, forKey: .includes)
         var allItems = try nestedConatinerIncludes.nestedUnkeyedContainer(forKey: .Entry)
@@ -65,10 +74,11 @@ class Items : Decodable {
             let chefAsset = try fieldSysContainer.decodeIfPresent(NameField.self, forKey:  .fields)
             let tagAsset = try fieldSysContainer.decodeIfPresent(NameField.self, forKey: .fields)
             let sysContainer = try fieldSysContainer.decode(Sys.self, forKey:  .sys)
+            //1. Chef name
             if  sysContainer.id == modelItem.chef?.sys?.id, let chefName = chefAsset?.name  {
-                    modelItem.chef?.name = chefName
+                modelItem.chef?.name = chefName
             }
-
+            //2. Tag names 
             modelItem.tags?.forEach({ ( tag) in
                 if tag.tags.id == sysContainer.id, let name = tagAsset?.name  {
                     tag.name = name

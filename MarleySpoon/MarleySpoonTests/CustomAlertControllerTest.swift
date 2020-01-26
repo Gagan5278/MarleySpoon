@@ -23,9 +23,10 @@ class CustomAlertControllerTest: XCTestCase {
         }
     }
     
+    /// Alert button action
+    /// - Parameter action: UIAlertAction
     fileprivate func okButtonAlertAction(action: UIAlertAction)
     {
         print("OK Button Pressed")
     }
-
 }

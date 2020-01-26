@@ -10,15 +10,15 @@ import XCTest
 @testable import MarleySpoon
 class NetworkCommunicatorTest: XCTestCase {
     var networkCommunicator: NetworkCommunicator!
-
+    
     override func setUp() {
         networkCommunicator = NetworkCommunicator()
     }
-
+    
     override func tearDown() {
         networkCommunicator =  nil
     }
-
+    
     //MARK:- Test Recipe List Fetch
     func testRecipeListFetch()
     {
@@ -26,9 +26,9 @@ class NetworkCommunicatorTest: XCTestCase {
         var fakeModel: Items?
         self.networkCommunicator.fetchRecipeList(value: Items.self) { (result) in
             switch result {
-             case .success(let item):
-                      fakeModel = item
-             case .failure(_):
+            case .success(let item):
+                fakeModel = item
+            case .failure(_):
                 break
             }
             expectationObeject.fulfill()

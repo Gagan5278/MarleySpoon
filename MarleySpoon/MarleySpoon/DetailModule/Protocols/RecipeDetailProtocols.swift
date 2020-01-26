@@ -17,22 +17,22 @@ protocol RecipeDetailWireframeProtocol: class {
 //MARK: Presenter -
 protocol RecipeDetailPresenterProtocol: class {
     //1. call when view is loaded
-   func viewLoaded()
-   //show user message
-   func showAlert(with title: String, message: String, view: RecipeDetailViewProtocol, buttonTitle: String, withCallback callBack: ((UIAlertAction) -> Void)?)
+    func viewLoaded()
+    //show user message
+    func showAlert(with title: String, message: String, view: RecipeDetailViewProtocol, buttonTitle: String, withCallback callBack: ((UIAlertAction) -> Void)?)
 }
 
 //MARK: Interactor -
 protocol RecipeDetailInteractorProtocol: class {
-
-  var presenter: RecipeDetailPresenterProtocol?  { get set }
+    
+    var presenter: RecipeDetailPresenterProtocol?  { get set }
 }
 
 //MARK: View -
 protocol RecipeDetailViewProtocol: class {
-
-  var presenter: RecipeDetailPresenterProtocol?  { get set }
-
-  func didLoadDetail(from text: NSAttributedString)
-  func didLoad(image: UIImage?)
+    
+    var presenter: RecipeDetailPresenterProtocol?  { get set }
+    
+    func didLoadDetail(from text: NSAttributedString)
+    func didLoad(image: UIImage?)
 }

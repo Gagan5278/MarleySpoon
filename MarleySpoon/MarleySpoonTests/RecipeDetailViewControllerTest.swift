@@ -12,16 +12,16 @@ class RecipeDetailViewControllerTest: XCTestCase {
     var recipeDetailViewController:RecipeDetailViewController!
     
     override func setUp() {
-         self.recipeDetailViewController  = RecipeDetailRouter.createDetailModule(with: ((FakeModel.getRecipeListFakeModel()?.fields.first)!))
-            recipeDetailViewController.loadView()
-            recipeDetailViewController.viewDidLoad()
-    
+        self.recipeDetailViewController  = RecipeDetailRouter.createDetailModule(with: ((FakeModel.getRecipeListFakeModel()?.fields.first)!))
+        recipeDetailViewController.loadView()
+        recipeDetailViewController.viewDidLoad()
+        
     }
-
+    
     override func tearDown() {
         recipeDetailViewController = nil
     }
-
+    
     func testViewExist()
     {
         XCTAssertNotNil(recipeDetailViewController.view)

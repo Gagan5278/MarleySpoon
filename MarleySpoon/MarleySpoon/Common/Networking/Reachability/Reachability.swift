@@ -8,8 +8,8 @@
 
 import Foundation
 import Network
- /*
-   As per experience, Network framework works perfectly on physical Device. If you want to test this class please use real physical device.
+/*
+ As per experience, Network framework works perfectly on physical Device. If you want to test this class please use real physical device.
  */
 
 class Reachability {

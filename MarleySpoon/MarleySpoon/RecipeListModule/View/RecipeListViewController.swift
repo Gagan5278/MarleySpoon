@@ -19,7 +19,7 @@ class RecipeListViewController: UIViewController {
     /// UIRefreshControl for refreshing list
     private var pullRefreshControl = UIRefreshControl()
     ///RecipeListPresenterProtocol
-	var presenter: RecipeListPresenterProtocol?
+    var presenter: RecipeListPresenterProtocol?
     //array to store list of recipe items
     var arrayOfRecipeItems: [RecipeModel] = []
     //table row height
@@ -110,7 +110,7 @@ extension RecipeListViewController: UITableViewDelegate {
 
 //MARK:- RecipeListViewProtocol implementation
 extension RecipeListViewController: RecipeListViewProtocol {
-
+    
     func didFinishLoading() {
         self.loaderIndicator.stopAnimating()
     }
@@ -118,7 +118,7 @@ extension RecipeListViewController: RecipeListViewProtocol {
     func didStartLoading() {
         self.loaderIndicator.startAnimating()
     }
-
+    
     func didRecieve(error: APIError) {
         presenter?.showAlert(with: "Error", message: error.localizedDescription, view: self, with: "OK", withCallback: nil)
     }

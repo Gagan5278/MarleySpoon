@@ -9,7 +9,7 @@
 import UIKit
 
 class RecipeListTableCell: UITableViewCell {
-
+    
     //IBOutlets
     @IBOutlet weak var recipeLogoImageView: UIImageView!
     @IBOutlet weak var logoLoaderIndicator: UIActivityIndicatorView!
@@ -19,11 +19,11 @@ class RecipeListTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
     var recipeModel: RecipeModel! {
         didSet {
             self.bindDataModel()
@@ -36,10 +36,10 @@ class RecipeListTableCell: UITableViewCell {
         self.recipeInfoLabel.text = getTagName() ?? ( recipeModel.chef?.name != nil ? ("By: " + (recipeModel.chef?.name)!) :  "")
     }
     
-     private func getTagName() -> String? {
-       return recipeModel.tags?.reduce([String](), { res, item in
+    private func getTagName() -> String? {
+        return recipeModel.tags?.reduce([String](), { res, item in
             var arr = res
-        arr.append(item.name?.capitalized ?? "")
+            arr.append(item.name?.capitalized ?? "")
             return arr
         }).joined(separator: " & ")
     }

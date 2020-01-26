@@ -15,12 +15,12 @@ class RecipeListPresenterTest: XCTestCase {
     fileprivate var interactor: MockInteractor!
     fileprivate var router: MockRouter!
     fileprivate var dataManager: MockDataManager!
-        
+    
     override func setUp() {
         mockView = MockView()
         presenterSetup()
     }
-
+    
     override func tearDown() {
         dataManager = nil
         router = nil
@@ -28,7 +28,7 @@ class RecipeListPresenterTest: XCTestCase {
         mockView = nil
         recipePresenter = nil
     }
-
+    
     fileprivate func presenterSetup() {
         interactor = MockInteractor()
         router = MockRouter()
@@ -46,9 +46,9 @@ class RecipeListPresenterTest: XCTestCase {
     
     //MARK:- Test Stop Loading
     func testStopLoadingIndicator() {
-      interactor.presenter = recipePresenter
-      recipePresenter.fetchRecipeList()
-      XCTAssertTrue(!mockView.isLoading)
+        interactor.presenter = recipePresenter
+        recipePresenter.fetchRecipeList()
+        XCTAssertTrue(!mockView.isLoading)
     }
     
     //MARK:- Test Error in fetching list
@@ -61,7 +61,7 @@ class RecipeListPresenterTest: XCTestCase {
     
     func testMockRouterShowAlert(){
         router.showAlert(with: "", message: "", view: mockView!, buttonTitle: "", withCallback: nil)
-         XCTAssertTrue(router.isDisplayingAlert)
+        XCTAssertTrue(router.isDisplayingAlert)
     }
     
     func testRouterPushed() {
@@ -92,10 +92,10 @@ fileprivate class MockInteractor: RecipeListInteractorInputProtocol {
     var isErrorFoundOnRequest: Bool = false
     
     func fetchRecipeListFromServer() {
-         if isFail {
+        if isFail {
             presenter?.onRecieveServer(error: APIError.invalidData)
-         }
-         else {
+        }
+        else {
             presenter?.onRecieveRecipe(items: FakeModel.getRecipeListFakeModel()!.fields)
         }
     }
@@ -114,7 +114,7 @@ extension MockInteractor: RecipeRemoteDataManagerOutputProtocol {
 fileprivate class MockRouter: RecipeListWireframeProtocol {
     var isDisplayingAlert: Bool = false
     var isPushed: Bool = false
-
+    
     func showAlert(with title: String, message: String, view: RecipeListViewProtocol, buttonTitle: String, withCallback callBack: ((UIAlertAction) -> Void)?) {
         isDisplayingAlert = true
     }

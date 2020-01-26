@@ -14,7 +14,7 @@ class FakeModel {
     static let fakeImageURLString = "https://image.freepik.com/free-vector/broken-frosted-glass-realistic-icon_1284-12125.jpg"
     //Faking Data
     fileprivate class func createFakeRecipeListData() -> Data {
-        let fakeRepoListModel = Data("""
+        let fakeRecipeListModel = Data("""
         {
             "sys": {
                 "type": "Array"
@@ -133,7 +133,7 @@ class FakeModel {
             }
         }
         """.utf8)
-        return fakeRepoListModel
+        return fakeRecipeListModel
     }
 
     //MARK:- get Fake  model

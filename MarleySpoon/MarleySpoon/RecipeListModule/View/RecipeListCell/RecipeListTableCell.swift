@@ -33,17 +33,9 @@ class RecipeListTableCell: UITableViewCell {
     //MARK:- Bind data
     private func bindDataModel() {
         self.recipeTitleLabel.text = recipeModel.title
-        self.recipeInfoLabel.text = getTagName() ?? ( recipeModel.chef?.name != nil ? ("By: " + (recipeModel.chef?.name)!) :  "")
+        self.recipeInfoLabel.text = recipeModel.tags?.createHumanRedableString() ?? ( recipeModel.chef?.name != nil ? ("By: " + (recipeModel.chef?.name)!) :  "")
     }
-    
-    private func getTagName() -> String? {
-        return recipeModel.tags?.reduce([String](), { res, item in
-            var arr = res
-            arr.append(item.name?.capitalized ?? "")
-            return arr
-        }).joined(separator: " & ")
-    }
-    
+        
     //MARK:- Set image
     func setRecipe(logo: UIImage?) {
         //1. Set image if available

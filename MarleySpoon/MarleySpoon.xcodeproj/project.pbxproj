@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210371FF23DEC46E003F461C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210371FE23DEC46E003F461C /* Array+Extension.swift */; };
 		2169D42023DDB5E600881892 /* RecipeDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169D41F23DDB5E600881892 /* RecipeDetailViewControllerTest.swift */; };
 		2169D42223DDB60100881892 /* FakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169D42123DDB60100881892 /* FakeModel.swift */; };
 		2169D42423DDC41800881892 /* RecipeDetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169D42323DDC41800881892 /* RecipeDetailPresenterTest.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210371FE23DEC46E003F461C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		2169D41F23DDB5E600881892 /* RecipeDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		2169D42123DDB60100881892 /* FakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModel.swift; sourceTree = "<group>"; };
 		2169D42323DDC41800881892 /* RecipeDetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailPresenterTest.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				21D46B5923DD984400CEE1F8 /* Color+Extension.swift */,
+				210371FE23DEC46E003F461C /* Array+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				218B5A6023DAFF8800FFAF38 /* RemoteDataManager.swift in Sources */,
 				21D46B5A23DD984400CEE1F8 /* Color+Extension.swift in Sources */,
 				218B5A7123DB214F00FFAF38 /* RecipeDetailPresenter.swift in Sources */,
+				210371FF23DEC46E003F461C /* Array+Extension.swift in Sources */,
 				21D46B5823DD95FC00CEE1F8 /* AttributedStringHelper.swift in Sources */,
 				218B5A6323DB041E00FFAF38 /* CustomAlertController.swift in Sources */,
 				218B5A7223DB214F00FFAF38 /* RecipeDetailRouter.swift in Sources */,

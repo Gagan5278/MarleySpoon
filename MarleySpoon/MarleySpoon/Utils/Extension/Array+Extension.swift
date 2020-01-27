@@ -9,6 +9,7 @@
 import Foundation
 extension Array where Element: Tags {
     
+    /// returns comma sprated tags 
     func createHumanRedableString() -> String {
         return self.reduce([String](), { res, item in
             var arr = res
